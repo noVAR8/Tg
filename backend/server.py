@@ -255,8 +255,22 @@ async def handle_search_command(chat_id: int, query: str):
         
     except Exception as e:
         error_msg = f"❌ Ошибка при поиске: {str(e)}"
+        
+        # Add more detailed error information
+        if "400" in str(e):
+            error_msg += f"\n\n💡 Попробуйте другой формат запроса:\n"
+            error_msg += f"• Телефон: `+79123456789` (без пробелов)\n"
+            error_msg += f"• Email: `user@domain.com`\n"
+            error_msg += f"• Имя: `Иван Петров`"
+        elif "401" in str(e) or "403" in str(e):
+            error_msg += f"\n\n🔑 Проблема с авторизацией API"
+        elif "429" in str(e):
+            error_msg += f"\n\n⏱️ Превышен лимит запросов. Попробуйте позже."
+        elif "500" in str(e):
+            error_msg += f"\n\n⚠️ Проблема на сервере API. Попробуйте позже."
+        
         await send_telegram_message(chat_id, error_msg)
-        print(f"Search error: {e}")
+        print(f"Search error for query '{query}' -> '{formatted_query}': {e}")
 
 async def handle_sources_command(chat_id: int):
     """Handle /sources command"""
