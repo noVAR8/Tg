@@ -513,7 +513,11 @@ function App() {
         {/* Refresh Button */}
         <div className="mt-8 text-center">
           <button
-            onClick={fetchStats}
+            onClick={() => {
+              fetchStats();
+              fetchUsers();
+              fetchReferrals();
+            }}
             className="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 px-8 py-3 rounded-lg font-medium transition-all duration-200 shadow-lg hover:shadow-xl"
           >
             🔄 Обновить данные
