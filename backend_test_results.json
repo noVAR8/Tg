@@ -3,7 +3,7 @@
     "test": "Basic API",
     "status": "PASS",
     "message": "Server is running",
-    "timestamp": "2025-07-12T10:51:14.529767",
+    "timestamp": "2025-07-12T11:00:43.989882",
     "details": {
       "message": "Telegram Bot API Server",
       "status": "running"
@@ -13,7 +13,7 @@
     "test": "Usersbox Integration",
     "status": "PASS",
     "message": "API token works, balance: 0, active: True",
-    "timestamp": "2025-07-12T10:51:15.442766",
+    "timestamp": "2025-07-12T11:00:44.806289",
     "details": {
       "id": 1752316927,
       "title": "Reed Assistant",
@@ -31,22 +31,177 @@
     "test": "Webhook Setup",
     "status": "PASS",
     "message": "Webhook set successfully to https://3312ad11-8248-4d7e-86f5-1571a6d10e5d.preview.emergentagent.com/api/webhook",
-    "timestamp": "2025-07-12T10:51:16.008323",
+    "timestamp": "2025-07-12T11:00:45.188549",
     "details": {
       "ok": true,
       "result": true,
-      "description": "Webhook was set"
+      "description": "Webhook is already set"
     }
   },
   {
     "test": "Stats Endpoint",
     "status": "PASS",
-    "message": "Database connected, 0 messages, 0 searches",
-    "timestamp": "2025-07-12T10:51:16.022589",
+    "message": "Database connected, 15 messages, 0 searches",
+    "timestamp": "2025-07-12T11:00:45.204504",
     "details": {
-      "total_messages": 0,
+      "total_messages": 15,
       "total_searches": 0,
-      "recent_messages": [],
+      "recent_messages": [
+        {
+          "id": "f108acfa-1166-4c20-bc80-529402ea3111",
+          "chat_id": 1557902375,
+          "text": "\u274c \u041e\u0448\u0438\u0431\u043a\u0430 \u043f\u0440\u0438 \u043f\u043e\u0438\u0441\u043a\u0435: ",
+          "direction": "outgoing",
+          "timestamp": "2025-07-12T10:58:37.374000",
+          "status": "sent"
+        },
+        {
+          "id": "c94f203d-0866-4843-928a-2ac2ea87291a",
+          "chat_id": 1557902375,
+          "text": "\ud83d\udd0d \u0418\u0449\u0443 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044e \u043f\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u0443: `+79002931599`",
+          "direction": "outgoing",
+          "timestamp": "2025-07-12T10:58:31.717000",
+          "status": "sent"
+        },
+        {
+          "id": "858058f3-0781-4358-af99-1d249477faf2",
+          "chat_id": 1557902375,
+          "text": "89002931599",
+          "direction": "incoming",
+          "timestamp": "2025-07-12T10:58:31.308000",
+          "update_data": {
+            "update_id": 51221910,
+            "message": {
+              "message_id": 98,
+              "from": {
+                "id": 1557902375,
+                "is_bot": false,
+                "first_name": "EriS",
+                "username": "ErIKSSoN_SOP",
+                "language_code": "ru"
+              },
+              "chat": {
+                "id": 1557902375,
+                "first_name": "EriS",
+                "username": "ErIKSSoN_SOP",
+                "type": "private"
+              },
+              "date": 1752317911,
+              "text": "89002931599",
+              "entities": [
+                {
+                  "offset": 0,
+                  "length": 11,
+                  "type": "phone_number"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "e7f41149-1335-4ef9-ad33-254852f36b96",
+          "chat_id": 1557902375,
+          "text": "\u274c \u041e\u0448\u0438\u0431\u043a\u0430 \u043f\u0440\u0438 \u043f\u043e\u0438\u0441\u043a\u0435: Client error '400 Bad Request' for url 'https://api.usersbox.ru/v1/search?q=%2B7%20929%20847-04-21'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400",
+          "direction": "outgoing",
+          "timestamp": "2025-07-12T10:57:32.829000",
+          "status": "sent"
+        },
+        {
+          "id": "188984f0-9f72-451d-a106-906f41df1ea2",
+          "chat_id": 1557902375,
+          "text": "\ud83d\udd0d \u0418\u0449\u0443 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044e \u043f\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u0443: `+7 929 847-04-21`",
+          "direction": "outgoing",
+          "timestamp": "2025-07-12T10:57:28.751000",
+          "status": "sent"
+        },
+        {
+          "id": "f2e80dd5-5b7d-4755-9a45-c1e140c7bbbc",
+          "chat_id": 1557902375,
+          "text": "+7 929 847-04-21",
+          "direction": "incoming",
+          "timestamp": "2025-07-12T10:57:28.359000",
+          "update_data": {
+            "update_id": 51221909,
+            "message": {
+              "message_id": 95,
+              "from": {
+                "id": 1557902375,
+                "is_bot": false,
+                "first_name": "EriS",
+                "username": "ErIKSSoN_SOP",
+                "language_code": "ru"
+              },
+              "chat": {
+                "id": 1557902375,
+                "first_name": "EriS",
+                "username": "ErIKSSoN_SOP",
+                "type": "private"
+              },
+              "date": 1752317848,
+              "text": "+7 929 847-04-21"
+            }
+          }
+        },
+        {
+          "id": "a525eada-4ee1-4127-b9b3-1a632dde825e",
+          "chat_id": 1557902375,
+          "text": "\u274c \u041e\u0448\u0438\u0431\u043a\u0430 \u043f\u0440\u0438 \u043f\u043e\u0438\u0441\u043a\u0435: ",
+          "direction": "outgoing",
+          "timestamp": "2025-07-12T10:57:10.825000",
+          "status": "sent"
+        },
+        {
+          "id": "0a49cf9a-301c-4f39-9238-2fa8e28a830e",
+          "chat_id": 1557902375,
+          "text": "\ud83d\udd0d \u0418\u0449\u0443 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044e \u043f\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u0443: `+79002931599`",
+          "direction": "outgoing",
+          "timestamp": "2025-07-12T10:57:04.968000",
+          "status": "sent"
+        },
+        {
+          "id": "c49e0b72-8870-4391-84f7-f1f19201e629",
+          "chat_id": 1557902375,
+          "text": "+79002931599",
+          "direction": "incoming",
+          "timestamp": "2025-07-12T10:57:04.522000",
+          "update_data": {
+            "update_id": 51221908,
+            "message": {
+              "message_id": 92,
+              "from": {
+                "id": 1557902375,
+                "is_bot": false,
+                "first_name": "EriS",
+                "username": "ErIKSSoN_SOP",
+                "language_code": "ru"
+              },
+              "chat": {
+                "id": 1557902375,
+                "first_name": "EriS",
+                "username": "ErIKSSoN_SOP",
+                "type": "private"
+              },
+              "date": 1752317824,
+              "text": "+79002931599",
+              "entities": [
+                {
+                  "offset": 0,
+                  "length": 12,
+                  "type": "phone_number"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "id": "08dd9bb5-228d-4da5-a009-c9e15d678883",
+          "chat_id": 1557902375,
+          "text": "\u274c \u041e\u0448\u0438\u0431\u043a\u0430 \u043f\u0440\u0438 \u043f\u043e\u0438\u0441\u043a\u0435: Client error '400 Bad Request' for url 'https://api.usersbox.ru/v1/search?q=%2B79002931599'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400",
+          "direction": "outgoing",
+          "timestamp": "2025-07-12T10:52:52.420000",
+          "status": "sent"
+        }
+      ],
       "recent_searches": []
     }
   },
@@ -54,7 +209,80 @@
     "test": "Webhook Endpoint",
     "status": "FAIL",
     "message": "Webhook returned error status",
-    "timestamp": "2025-07-12T10:51:16.219409",
+    "timestamp": "2025-07-12T11:00:46.490322",
+    "details": {
+      "status": "error",
+      "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+    }
+  },
+  {
+    "test": "Phone Number Formatting",
+    "status": "FAIL",
+    "message": "Some phone formats failed processing",
+    "timestamp": "2025-07-12T11:00:51.381175",
+    "details": [
+      {
+        "input": "+7 929 847-04-21",
+        "description": "International format with spaces and dashes",
+        "status": "failed",
+        "error": {
+          "status": "error",
+          "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+        }
+      },
+      {
+        "input": "8-929-847-04-21",
+        "description": "Russian format starting with 8",
+        "status": "failed",
+        "error": {
+          "status": "error",
+          "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+        }
+      },
+      {
+        "input": "79298470421",
+        "description": "Russian format without +",
+        "status": "failed",
+        "error": {
+          "status": "error",
+          "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+        }
+      },
+      {
+        "input": "9298470421",
+        "description": "Mobile format without country code",
+        "status": "failed",
+        "error": {
+          "status": "error",
+          "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+        }
+      },
+      {
+        "input": "+7(929)847-04-21",
+        "description": "Format with parentheses",
+        "status": "failed",
+        "error": {
+          "status": "error",
+          "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+        }
+      }
+    ]
+  },
+  {
+    "test": "Usersbox Query Formatting",
+    "status": "FAIL",
+    "message": "Webhook returned error status",
+    "timestamp": "2025-07-12T11:00:51.726191",
+    "details": {
+      "status": "error",
+      "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+    }
+  },
+  {
+    "test": "Error Handling",
+    "status": "FAIL",
+    "message": "Webhook returned error for empty query",
+    "timestamp": "2025-07-12T11:00:51.869207",
     "details": {
       "status": "error",
       "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
