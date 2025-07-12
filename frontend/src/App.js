@@ -487,26 +487,44 @@ function App() {
           <h2 className="text-2xl font-semibold mb-4 flex items-center">
             📖 Как использовать бота
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
-              <h3 className="text-lg font-medium text-blue-300 mb-3">Команды бота:</h3>
+              <h3 className="text-lg font-medium text-blue-300 mb-3">Основные команды:</h3>
               <ul className="space-y-2 text-gray-300">
                 <li>• <code className="bg-black/30 px-2 py-1 rounded">/start</code> - Начать работу</li>
+                <li>• <code className="bg-black/30 px-2 py-1 rounded">/profile</code> - Профиль и статистика</li>
+                <li>• <code className="bg-black/30 px-2 py-1 rounded">/referral</code> - Реферальная программа</li>
                 <li>• <code className="bg-black/30 px-2 py-1 rounded">/search &lt;запрос&gt;</code> - Поиск</li>
-                <li>• <code className="bg-black/30 px-2 py-1 rounded">/sources</code> - Список баз</li>
-                <li>• <code className="bg-black/30 px-2 py-1 rounded">/balance</code> - Баланс</li>
+                <li>• <code className="bg-black/30 px-2 py-1 rounded">/balance</code> - Баланс API</li>
                 <li>• <code className="bg-black/30 px-2 py-1 rounded">/help</code> - Помощь</li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-medium text-purple-300 mb-3">Примеры поиска:</h3>
+              <h3 className="text-lg font-medium text-purple-300 mb-3">Система попыток:</h3>
+              <ul className="space-y-2 text-gray-300">
+                <li>• 🎁 1 бесплатная попытка при регистрации</li>
+                <li>• 🤝 +1 попытка за каждого приглашенного друга</li>
+                <li>• 🔗 Используйте <code className="bg-black/30 px-1 rounded">/referral</code> для получения ссылки</li>
+                <li>• 📊 Проверяйте баланс попыток в <code className="bg-black/30 px-1 rounded">/profile</code></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-medium text-green-300 mb-3">Примеры поиска:</h3>
               <ul className="space-y-2 text-gray-300">
                 <li>• <code className="bg-black/30 px-2 py-1 rounded">+79123456789</code> - По телефону</li>
                 <li>• <code className="bg-black/30 px-2 py-1 rounded">example@mail.ru</code> - По email</li>
                 <li>• <code className="bg-black/30 px-2 py-1 rounded">Иван Петров</code> - По имени</li>
-                <li>• Любой текст для поиска</li>
+                <li>• Любой текст для автоматического поиска</li>
               </ul>
             </div>
+          </div>
+          
+          <div className="mt-6 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-lg p-4 border border-green-500/30">
+            <h4 className="font-medium text-green-300 mb-2">🎁 Реферальная программа</h4>
+            <p className="text-sm text-gray-300">
+              Приглашайте друзей и получайте дополнительные попытки! За каждого нового пользователя, 
+              который зарегистрируется по вашей реферальной ссылке, вы получите +1 попытку для поиска.
+            </p>
           </div>
         </div>
 
