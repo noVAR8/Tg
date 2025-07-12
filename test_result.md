@@ -165,6 +165,54 @@ backend:
         agent: "testing"
         comment: "Minor: Webhook endpoint processes incoming updates correctly but Telegram API returns 400 error when trying to send messages to test chat_id. This is expected behavior for test data with fake chat_id. Core webhook processing functionality works properly."
 
+  - task: "Phone Number Formatting Improvements"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Phone number formatting improvements are working perfectly. The normalize_phone_number() function correctly converts various phone formats (+7 929 847-04-21, 8-929-847-04-21, 79298470421, 9298470421) to E.164 format (+79298470421). The format_search_query() function properly detects phone numbers and applies normalization while leaving other queries unchanged. Direct function testing shows 100% success rate for all test cases."
+
+  - task: "Usersbox Query Formatting"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Query formatting for usersbox API is working correctly. Phone numbers are being normalized before sending to usersbox API, which resolves the previous 400 Bad Request errors. Database logs show search queries like '+79002931599' being properly formatted. The 400 errors from usersbox API that were occurring due to malformed phone numbers have been resolved."
+
+  - task: "Enhanced Error Handling"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Enhanced error handling is implemented with specific guidance based on error types. The code includes detailed error messages for 400, 401, 403, 429, and 500 errors with helpful suggestions for users. Empty search queries are handled gracefully with appropriate user feedback."
+
+  - task: "Debug Logging and Query Tracking"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "✅ Debug logging is properly implemented. The system logs both original and formatted queries, usersbox API requests/responses, and detailed error information. Database logs show proper tracking of query transformations from original input to formatted output."
+
 frontend:
   - task: "Frontend Testing"
     implemented: false
