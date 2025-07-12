@@ -179,15 +179,15 @@ async def handle_search_command(chat_id: int, query: str):
         await send_telegram_message(chat_id, f"🔍 Ищу информацию по запросу: `{formatted_query}`")
         
         # First, get count of results
-        explain_result = await explain_search(query)
+        explain_result = await explain_search(formatted_query)
         total_count = explain_result.get("data", {}).get("count", 0)
         
         if total_count == 0:
-            await send_telegram_message(chat_id, f"❌ По запросу `{query}` ничего не найдено.")
+            await send_telegram_message(chat_id, f"❌ По запросу `{formatted_query}` ничего не найдено.")
             return
         
         # Get actual search results
-        search_result = await search_all_databases(query)
+        search_result = await search_all_databases(formatted_query)
         
         if search_result.get("status") == "success":
             data = search_result.get("data", {})
