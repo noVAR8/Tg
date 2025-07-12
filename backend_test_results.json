@@ -1,0 +1,63 @@
+[
+  {
+    "test": "Basic API",
+    "status": "PASS",
+    "message": "Server is running",
+    "timestamp": "2025-07-12T10:51:14.529767",
+    "details": {
+      "message": "Telegram Bot API Server",
+      "status": "running"
+    }
+  },
+  {
+    "test": "Usersbox Integration",
+    "status": "PASS",
+    "message": "API token works, balance: 0, active: True",
+    "timestamp": "2025-07-12T10:51:15.442766",
+    "details": {
+      "id": 1752316927,
+      "title": "Reed Assistant",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkX2F0IjoxNzUyMzE2OTI3LCJhcHBfaWQiOjE3NTIzMTY5Mjd9.sYYS5fKjwzKXLb5FwWCqdkxXvaoljYGM-hHHvkREdgI",
+      "created_at": "2025-07-12T13:42:07.066Z",
+      "is_active": true,
+      "balance": 0,
+      "owner": {
+        "user_id": 6753621969,
+        "bot_id": 7952592619
+      }
+    }
+  },
+  {
+    "test": "Webhook Setup",
+    "status": "PASS",
+    "message": "Webhook set successfully to https://3312ad11-8248-4d7e-86f5-1571a6d10e5d.preview.emergentagent.com/api/webhook",
+    "timestamp": "2025-07-12T10:51:16.008323",
+    "details": {
+      "ok": true,
+      "result": true,
+      "description": "Webhook was set"
+    }
+  },
+  {
+    "test": "Stats Endpoint",
+    "status": "PASS",
+    "message": "Database connected, 0 messages, 0 searches",
+    "timestamp": "2025-07-12T10:51:16.022589",
+    "details": {
+      "total_messages": 0,
+      "total_searches": 0,
+      "recent_messages": [],
+      "recent_searches": []
+    }
+  },
+  {
+    "test": "Webhook Endpoint",
+    "status": "FAIL",
+    "message": "Webhook returned error status",
+    "timestamp": "2025-07-12T10:51:16.219409",
+    "details": {
+      "status": "error",
+      "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+    }
+  }
+]
