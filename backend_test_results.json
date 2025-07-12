@@ -3,26 +3,26 @@
     "test": "Basic API",
     "status": "PASS",
     "message": "Server is running",
-    "timestamp": "2025-07-12T11:00:43.989882",
+    "timestamp": "2025-07-12T11:13:27.106878",
     "details": {
-      "message": "Telegram Bot API Server",
+      "message": "Telegram Bot API Server with Referral System",
       "status": "running"
     }
   },
   {
     "test": "Usersbox Integration",
     "status": "PASS",
-    "message": "API token works, balance: 0, active: True",
-    "timestamp": "2025-07-12T11:00:44.806289",
+    "message": "API token works, balance: 10, active: True",
+    "timestamp": "2025-07-12T11:13:27.930639",
     "details": {
-      "id": 1752316927,
-      "title": "Reed Assistant",
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkX2F0IjoxNzUyMzE2OTI3LCJhcHBfaWQiOjE3NTIzMTY5Mjd9.sYYS5fKjwzKXLb5FwWCqdkxXvaoljYGM-hHHvkREdgI",
-      "created_at": "2025-07-12T13:42:07.066Z",
+      "id": 1752317970,
+      "title": "Slit",
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkX2F0IjoxNzUyMzE3OTcwLCJhcHBfaWQiOjE3NTIzMTc5NzB9.yQb2nFHs7B-UZ-UvxhyQty7Zuu9QjZ5yWH-s-LEgd90",
+      "created_at": "2025-07-12T13:59:29.836Z",
       "is_active": true,
-      "balance": 0,
+      "balance": 10,
       "owner": {
-        "user_id": 6753621969,
+        "user_id": 1557902375,
         "bot_id": 7952592619
       }
     }
@@ -31,7 +31,7 @@
     "test": "Webhook Setup",
     "status": "PASS",
     "message": "Webhook set successfully to https://3312ad11-8248-4d7e-86f5-1571a6d10e5d.preview.emergentagent.com/api/webhook",
-    "timestamp": "2025-07-12T11:00:45.188549",
+    "timestamp": "2025-07-12T11:13:28.296232",
     "details": {
       "ok": true,
       "result": true,
@@ -39,14 +39,232 @@
     }
   },
   {
-    "test": "Stats Endpoint",
+    "test": "Enhanced Stats Endpoint",
     "status": "PASS",
-    "message": "Database connected, 15 messages, 0 searches",
-    "timestamp": "2025-07-12T11:00:45.204504",
+    "message": "Database connected, 23 messages, 0 searches, 0 users, 0 referrals",
+    "timestamp": "2025-07-12T11:13:28.314330",
     "details": {
-      "total_messages": 15,
+      "total_messages": 23,
       "total_searches": 0,
+      "total_users": 0,
+      "total_referrals": 0,
       "recent_messages": [
+        {
+          "id": "71d7e28c-54cf-4431-9c70-fd296edac99e",
+          "chat_id": 987654321,
+          "text": "/search",
+          "direction": "incoming",
+          "timestamp": "2025-07-12T11:00:51.730000",
+          "update_data": {
+            "update_id": 123456792,
+            "message": {
+              "message_id": 4,
+              "from": {
+                "id": 987654321,
+                "is_bot": false,
+                "first_name": "Test",
+                "username": "testuser"
+              },
+              "chat": {
+                "id": 987654321,
+                "first_name": "Test",
+                "username": "testuser",
+                "type": "private"
+              },
+              "date": 1640995200,
+              "text": "/search"
+            }
+          }
+        },
+        {
+          "id": "387b9020-944e-43aa-8fd5-43ca68df0013",
+          "chat_id": 987654321,
+          "text": "+7 929 847-04-21",
+          "direction": "incoming",
+          "timestamp": "2025-07-12T11:00:51.385000",
+          "update_data": {
+            "update_id": 123456791,
+            "message": {
+              "message_id": 3,
+              "from": {
+                "id": 987654321,
+                "is_bot": false,
+                "first_name": "Test",
+                "username": "testuser"
+              },
+              "chat": {
+                "id": 987654321,
+                "first_name": "Test",
+                "username": "testuser",
+                "type": "private"
+              },
+              "date": 1640995200,
+              "text": "+7 929 847-04-21"
+            }
+          }
+        },
+        {
+          "id": "ae47ef8d-e628-41ae-bcd1-c8d31608597d",
+          "chat_id": 987654321,
+          "text": "/search +7(929)847-04-21",
+          "direction": "incoming",
+          "timestamp": "2025-07-12T11:00:50.601000",
+          "update_data": {
+            "update_id": 123456790,
+            "message": {
+              "message_id": 2,
+              "from": {
+                "id": 987654321,
+                "is_bot": false,
+                "first_name": "Test",
+                "username": "testuser"
+              },
+              "chat": {
+                "id": 987654321,
+                "first_name": "Test",
+                "username": "testuser",
+                "type": "private"
+              },
+              "date": 1640995200,
+              "text": "/search +7(929)847-04-21"
+            }
+          }
+        },
+        {
+          "id": "b731bca1-57e5-4d21-9609-d108585c9e29",
+          "chat_id": 987654321,
+          "text": "/search 9298470421",
+          "direction": "incoming",
+          "timestamp": "2025-07-12T11:00:49.670000",
+          "update_data": {
+            "update_id": 123456790,
+            "message": {
+              "message_id": 2,
+              "from": {
+                "id": 987654321,
+                "is_bot": false,
+                "first_name": "Test",
+                "username": "testuser"
+              },
+              "chat": {
+                "id": 987654321,
+                "first_name": "Test",
+                "username": "testuser",
+                "type": "private"
+              },
+              "date": 1640995200,
+              "text": "/search 9298470421"
+            }
+          }
+        },
+        {
+          "id": "6bda7171-9fa5-4f4a-bb97-7fdb5556b1f5",
+          "chat_id": 987654321,
+          "text": "/search 79298470421",
+          "direction": "incoming",
+          "timestamp": "2025-07-12T11:00:48.540000",
+          "update_data": {
+            "update_id": 123456790,
+            "message": {
+              "message_id": 2,
+              "from": {
+                "id": 987654321,
+                "is_bot": false,
+                "first_name": "Test",
+                "username": "testuser"
+              },
+              "chat": {
+                "id": 987654321,
+                "first_name": "Test",
+                "username": "testuser",
+                "type": "private"
+              },
+              "date": 1640995200,
+              "text": "/search 79298470421"
+            }
+          }
+        },
+        {
+          "id": "02de4dd3-8901-4f71-ab0b-28f5fac688b2",
+          "chat_id": 987654321,
+          "text": "/search 8-929-847-04-21",
+          "direction": "incoming",
+          "timestamp": "2025-07-12T11:00:47.482000",
+          "update_data": {
+            "update_id": 123456790,
+            "message": {
+              "message_id": 2,
+              "from": {
+                "id": 987654321,
+                "is_bot": false,
+                "first_name": "Test",
+                "username": "testuser"
+              },
+              "chat": {
+                "id": 987654321,
+                "first_name": "Test",
+                "username": "testuser",
+                "type": "private"
+              },
+              "date": 1640995200,
+              "text": "/search 8-929-847-04-21"
+            }
+          }
+        },
+        {
+          "id": "6fee93e2-8bc1-4451-9e2e-0858b1bfa29d",
+          "chat_id": 987654321,
+          "text": "/search +7 929 847-04-21",
+          "direction": "incoming",
+          "timestamp": "2025-07-12T11:00:46.494000",
+          "update_data": {
+            "update_id": 123456790,
+            "message": {
+              "message_id": 2,
+              "from": {
+                "id": 987654321,
+                "is_bot": false,
+                "first_name": "Test",
+                "username": "testuser"
+              },
+              "chat": {
+                "id": 987654321,
+                "first_name": "Test",
+                "username": "testuser",
+                "type": "private"
+              },
+              "date": 1640995200,
+              "text": "/search +7 929 847-04-21"
+            }
+          }
+        },
+        {
+          "id": "66ce5ba9-50e1-466a-bdc8-26c433e56b8c",
+          "chat_id": 987654321,
+          "text": "/start",
+          "direction": "incoming",
+          "timestamp": "2025-07-12T11:00:46.194000",
+          "update_data": {
+            "update_id": 123456789,
+            "message": {
+              "message_id": 1,
+              "from": {
+                "id": 987654321,
+                "is_bot": false,
+                "first_name": "Test",
+                "username": "testuser"
+              },
+              "chat": {
+                "id": 987654321,
+                "first_name": "Test",
+                "username": "testuser",
+                "type": "private"
+              },
+              "date": 1640995200,
+              "text": "/start"
+            }
+          }
+        },
         {
           "id": "f108acfa-1166-4c20-bc80-529402ea3111",
           "chat_id": 1557902375,
@@ -62,154 +280,87 @@
           "direction": "outgoing",
           "timestamp": "2025-07-12T10:58:31.717000",
           "status": "sent"
-        },
-        {
-          "id": "858058f3-0781-4358-af99-1d249477faf2",
-          "chat_id": 1557902375,
-          "text": "89002931599",
-          "direction": "incoming",
-          "timestamp": "2025-07-12T10:58:31.308000",
-          "update_data": {
-            "update_id": 51221910,
-            "message": {
-              "message_id": 98,
-              "from": {
-                "id": 1557902375,
-                "is_bot": false,
-                "first_name": "EriS",
-                "username": "ErIKSSoN_SOP",
-                "language_code": "ru"
-              },
-              "chat": {
-                "id": 1557902375,
-                "first_name": "EriS",
-                "username": "ErIKSSoN_SOP",
-                "type": "private"
-              },
-              "date": 1752317911,
-              "text": "89002931599",
-              "entities": [
-                {
-                  "offset": 0,
-                  "length": 11,
-                  "type": "phone_number"
-                }
-              ]
-            }
-          }
-        },
-        {
-          "id": "e7f41149-1335-4ef9-ad33-254852f36b96",
-          "chat_id": 1557902375,
-          "text": "\u274c \u041e\u0448\u0438\u0431\u043a\u0430 \u043f\u0440\u0438 \u043f\u043e\u0438\u0441\u043a\u0435: Client error '400 Bad Request' for url 'https://api.usersbox.ru/v1/search?q=%2B7%20929%20847-04-21'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400",
-          "direction": "outgoing",
-          "timestamp": "2025-07-12T10:57:32.829000",
-          "status": "sent"
-        },
-        {
-          "id": "188984f0-9f72-451d-a106-906f41df1ea2",
-          "chat_id": 1557902375,
-          "text": "\ud83d\udd0d \u0418\u0449\u0443 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044e \u043f\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u0443: `+7 929 847-04-21`",
-          "direction": "outgoing",
-          "timestamp": "2025-07-12T10:57:28.751000",
-          "status": "sent"
-        },
-        {
-          "id": "f2e80dd5-5b7d-4755-9a45-c1e140c7bbbc",
-          "chat_id": 1557902375,
-          "text": "+7 929 847-04-21",
-          "direction": "incoming",
-          "timestamp": "2025-07-12T10:57:28.359000",
-          "update_data": {
-            "update_id": 51221909,
-            "message": {
-              "message_id": 95,
-              "from": {
-                "id": 1557902375,
-                "is_bot": false,
-                "first_name": "EriS",
-                "username": "ErIKSSoN_SOP",
-                "language_code": "ru"
-              },
-              "chat": {
-                "id": 1557902375,
-                "first_name": "EriS",
-                "username": "ErIKSSoN_SOP",
-                "type": "private"
-              },
-              "date": 1752317848,
-              "text": "+7 929 847-04-21"
-            }
-          }
-        },
-        {
-          "id": "a525eada-4ee1-4127-b9b3-1a632dde825e",
-          "chat_id": 1557902375,
-          "text": "\u274c \u041e\u0448\u0438\u0431\u043a\u0430 \u043f\u0440\u0438 \u043f\u043e\u0438\u0441\u043a\u0435: ",
-          "direction": "outgoing",
-          "timestamp": "2025-07-12T10:57:10.825000",
-          "status": "sent"
-        },
-        {
-          "id": "0a49cf9a-301c-4f39-9238-2fa8e28a830e",
-          "chat_id": 1557902375,
-          "text": "\ud83d\udd0d \u0418\u0449\u0443 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044e \u043f\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u0443: `+79002931599`",
-          "direction": "outgoing",
-          "timestamp": "2025-07-12T10:57:04.968000",
-          "status": "sent"
-        },
-        {
-          "id": "c49e0b72-8870-4391-84f7-f1f19201e629",
-          "chat_id": 1557902375,
-          "text": "+79002931599",
-          "direction": "incoming",
-          "timestamp": "2025-07-12T10:57:04.522000",
-          "update_data": {
-            "update_id": 51221908,
-            "message": {
-              "message_id": 92,
-              "from": {
-                "id": 1557902375,
-                "is_bot": false,
-                "first_name": "EriS",
-                "username": "ErIKSSoN_SOP",
-                "language_code": "ru"
-              },
-              "chat": {
-                "id": 1557902375,
-                "first_name": "EriS",
-                "username": "ErIKSSoN_SOP",
-                "type": "private"
-              },
-              "date": 1752317824,
-              "text": "+79002931599",
-              "entities": [
-                {
-                  "offset": 0,
-                  "length": 12,
-                  "type": "phone_number"
-                }
-              ]
-            }
-          }
-        },
-        {
-          "id": "08dd9bb5-228d-4da5-a009-c9e15d678883",
-          "chat_id": 1557902375,
-          "text": "\u274c \u041e\u0448\u0438\u0431\u043a\u0430 \u043f\u0440\u0438 \u043f\u043e\u0438\u0441\u043a\u0435: Client error '400 Bad Request' for url 'https://api.usersbox.ru/v1/search?q=%2B79002931599'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400",
-          "direction": "outgoing",
-          "timestamp": "2025-07-12T10:52:52.420000",
-          "status": "sent"
         }
       ],
-      "recent_searches": []
+      "recent_searches": [],
+      "top_users": []
+    }
+  },
+  {
+    "test": "Users API Endpoint",
+    "status": "PASS",
+    "message": "Retrieved 0 user profiles",
+    "timestamp": "2025-07-12T11:13:28.364120",
+    "details": {
+      "user_count": 0,
+      "sample_user": null
+    }
+  },
+  {
+    "test": "Referrals API Endpoint",
+    "status": "PASS",
+    "message": "Retrieved 0 referral records",
+    "timestamp": "2025-07-12T11:13:28.385744",
+    "details": {
+      "referral_count": 0,
+      "sample_referral": null
+    }
+  },
+  {
+    "test": "User Profile Creation",
+    "status": "FAIL",
+    "message": "Webhook returned error status",
+    "timestamp": "2025-07-12T11:13:28.633034",
+    "details": {
+      "status": "error",
+      "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+    }
+  },
+  {
+    "test": "Profile Command",
+    "status": "FAIL",
+    "message": "Webhook returned error status",
+    "timestamp": "2025-07-12T11:13:28.925408",
+    "details": {
+      "status": "error",
+      "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+    }
+  },
+  {
+    "test": "Referral Command",
+    "status": "FAIL",
+    "message": "Webhook returned error status",
+    "timestamp": "2025-07-12T11:13:29.325580",
+    "details": {
+      "status": "error",
+      "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+    }
+  },
+  {
+    "test": "Referral System",
+    "status": "FAIL",
+    "message": "Invite command returned error",
+    "timestamp": "2025-07-12T11:13:29.891162",
+    "details": {
+      "status": "error",
+      "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
+    }
+  },
+  {
+    "test": "Attempt System",
+    "status": "FAIL",
+    "message": "Search command returned error",
+    "timestamp": "2025-07-12T11:13:30.289913",
+    "details": {
+      "status": "error",
+      "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
     }
   },
   {
     "test": "Webhook Endpoint",
     "status": "FAIL",
     "message": "Webhook returned error status",
-    "timestamp": "2025-07-12T11:00:46.490322",
+    "timestamp": "2025-07-12T11:13:30.443242",
     "details": {
       "status": "error",
       "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
@@ -219,7 +370,7 @@
     "test": "Phone Number Formatting",
     "status": "FAIL",
     "message": "Some phone formats failed processing",
-    "timestamp": "2025-07-12T11:00:51.381175",
+    "timestamp": "2025-07-12T11:13:35.476118",
     "details": [
       {
         "input": "+7 929 847-04-21",
@@ -272,7 +423,7 @@
     "test": "Usersbox Query Formatting",
     "status": "FAIL",
     "message": "Webhook returned error status",
-    "timestamp": "2025-07-12T11:00:51.726191",
+    "timestamp": "2025-07-12T11:13:35.924636",
     "details": {
       "status": "error",
       "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
@@ -282,7 +433,7 @@
     "test": "Error Handling",
     "status": "FAIL",
     "message": "Webhook returned error for empty query",
-    "timestamp": "2025-07-12T11:00:51.869207",
+    "timestamp": "2025-07-12T11:13:36.148853",
     "details": {
       "status": "error",
       "message": "Client error '400 Bad Request' for url 'https://api.telegram.org/bot6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg/sendMessage'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400"
