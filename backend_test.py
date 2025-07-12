@@ -201,6 +201,198 @@ class TelegramBotTester:
         except Exception as e:
             self.log_test("Webhook Endpoint", "FAIL", f"Connection error: {str(e)}")
             return False
+
+    async def test_phone_number_formatting(self):
+        """Test phone number formatting with various formats"""
+        try:
+            # Test different phone number formats that should be normalized
+            test_cases = [
+                {
+                    "input": "+7 929 847-04-21",
+                    "expected": "+79298470421",
+                    "description": "International format with spaces and dashes"
+                },
+                {
+                    "input": "8-929-847-04-21", 
+                    "expected": "+79298470421",
+                    "description": "Russian format starting with 8"
+                },
+                {
+                    "input": "79298470421",
+                    "expected": "+79298470421", 
+                    "description": "Russian format without +"
+                },
+                {
+                    "input": "9298470421",
+                    "expected": "+79298470421",
+                    "description": "Mobile format without country code"
+                },
+                {
+                    "input": "+7(929)847-04-21",
+                    "expected": "+79298470421",
+                    "description": "Format with parentheses"
+                }
+            ]
+            
+            all_passed = True
+            results = []
+            
+            for case in test_cases:
+                # Test via webhook with search command
+                sample_update = {
+                    "update_id": 123456790,
+                    "message": {
+                        "message_id": 2,
+                        "from": {
+                            "id": 987654321,
+                            "is_bot": False,
+                            "first_name": "Test",
+                            "username": "testuser"
+                        },
+                        "chat": {
+                            "id": 987654321,
+                            "first_name": "Test", 
+                            "username": "testuser",
+                            "type": "private"
+                        },
+                        "date": 1640995200,
+                        "text": f"/search {case['input']}"
+                    }
+                }
+                
+                async with self.session.post(f"{API_BASE}/webhook", json=sample_update) as response:
+                    if response.status == 200:
+                        data = await response.json()
+                        if data.get("status") == "ok":
+                            results.append({
+                                "input": case['input'],
+                                "description": case['description'],
+                                "status": "processed"
+                            })
+                        else:
+                            all_passed = False
+                            results.append({
+                                "input": case['input'],
+                                "description": case['description'], 
+                                "status": "failed",
+                                "error": data
+                            })
+                    else:
+                        all_passed = False
+                        results.append({
+                            "input": case['input'],
+                            "description": case['description'],
+                            "status": "http_error",
+                            "error": f"HTTP {response.status}"
+                        })
+                
+                # Small delay between requests
+                await asyncio.sleep(0.5)
+            
+            if all_passed:
+                self.log_test("Phone Number Formatting", "PASS", 
+                            f"All {len(test_cases)} phone formats processed correctly", results)
+                return True
+            else:
+                self.log_test("Phone Number Formatting", "FAIL", 
+                            "Some phone formats failed processing", results)
+                return False
+                
+        except Exception as e:
+            self.log_test("Phone Number Formatting", "FAIL", f"Test execution error: {str(e)}")
+            return False
+
+    async def test_usersbox_query_formatting(self):
+        """Test that formatted queries work with usersbox API (no 400 errors)"""
+        try:
+            # Test the specific phone number mentioned in the review request
+            test_phone = "+7 929 847-04-21"
+            
+            sample_update = {
+                "update_id": 123456791,
+                "message": {
+                    "message_id": 3,
+                    "from": {
+                        "id": 987654321,
+                        "is_bot": False,
+                        "first_name": "Test",
+                        "username": "testuser"
+                    },
+                    "chat": {
+                        "id": 987654321,
+                        "first_name": "Test",
+                        "username": "testuser", 
+                        "type": "private"
+                    },
+                    "date": 1640995200,
+                    "text": test_phone  # Direct search without /search command
+                }
+            }
+            
+            async with self.session.post(f"{API_BASE}/webhook", json=sample_update) as response:
+                if response.status == 200:
+                    data = await response.json()
+                    if data.get("status") == "ok":
+                        self.log_test("Usersbox Query Formatting", "PASS", 
+                                    f"Phone number '{test_phone}' processed without 400 error", data)
+                        return True
+                    else:
+                        self.log_test("Usersbox Query Formatting", "FAIL", 
+                                    "Webhook returned error status", data)
+                        return False
+                else:
+                    self.log_test("Usersbox Query Formatting", "FAIL", 
+                                f"HTTP {response.status}", await response.text())
+                    return False
+                    
+        except Exception as e:
+            self.log_test("Usersbox Query Formatting", "FAIL", f"Connection error: {str(e)}")
+            return False
+
+    async def test_error_handling_improvements(self):
+        """Test improved error handling with helpful messages"""
+        try:
+            # Test with an invalid/empty search query
+            sample_update = {
+                "update_id": 123456792,
+                "message": {
+                    "message_id": 4,
+                    "from": {
+                        "id": 987654321,
+                        "is_bot": False,
+                        "first_name": "Test",
+                        "username": "testuser"
+                    },
+                    "chat": {
+                        "id": 987654321,
+                        "first_name": "Test",
+                        "username": "testuser",
+                        "type": "private"
+                    },
+                    "date": 1640995200,
+                    "text": "/search"  # Empty search query
+                }
+            }
+            
+            async with self.session.post(f"{API_BASE}/webhook", json=sample_update) as response:
+                if response.status == 200:
+                    data = await response.json()
+                    if data.get("status") == "ok":
+                        self.log_test("Error Handling", "PASS", 
+                                    "Empty search query handled gracefully", data)
+                        return True
+                    else:
+                        self.log_test("Error Handling", "FAIL", 
+                                    "Webhook returned error for empty query", data)
+                        return False
+                else:
+                    self.log_test("Error Handling", "FAIL", 
+                                f"HTTP {response.status}", await response.text())
+                    return False
+                    
+        except Exception as e:
+            self.log_test("Error Handling", "FAIL", f"Connection error: {str(e)}")
+            return False
     
     async def run_all_tests(self):
         """Run all backend tests"""
