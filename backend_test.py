@@ -407,6 +407,9 @@ class TelegramBotTester:
             ("Webhook Setup", self.test_webhook_setup),
             ("Database Stats", self.test_stats_endpoint),
             ("Webhook Processing", self.test_webhook_endpoint),
+            ("Phone Number Formatting", self.test_phone_number_formatting),
+            ("Usersbox Query Formatting", self.test_usersbox_query_formatting),
+            ("Error Handling Improvements", self.test_error_handling_improvements),
         ]
         
         passed = 0
