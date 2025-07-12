@@ -128,34 +128,36 @@ class TelegramBotTester:
             return False
     
     async def test_stats_endpoint(self):
-        """Test stats endpoint /api/stats for database connectivity"""
+        """Test enhanced stats endpoint /api/stats with new user and referral fields"""
         try:
             async with self.session.get(f"{API_BASE}/stats") as response:
                 if response.status == 200:
                     data = await response.json()
                     
-                    # Check if we got expected stats structure
-                    required_fields = ["total_messages", "total_searches", "recent_messages", "recent_searches"]
+                    # Check if we got expected stats structure including new fields
+                    required_fields = ["total_messages", "total_searches", "total_users", "total_referrals", "recent_messages", "recent_searches"]
                     missing_fields = [field for field in required_fields if field not in data]
                     
                     if not missing_fields:
                         total_messages = data.get("total_messages", 0)
                         total_searches = data.get("total_searches", 0)
+                        total_users = data.get("total_users", 0)
+                        total_referrals = data.get("total_referrals", 0)
                         
-                        self.log_test("Stats Endpoint", "PASS", 
-                                    f"Database connected, {total_messages} messages, {total_searches} searches", 
+                        self.log_test("Enhanced Stats Endpoint", "PASS", 
+                                    f"Database connected, {total_messages} messages, {total_searches} searches, {total_users} users, {total_referrals} referrals", 
                                     data)
                         return True
                     else:
-                        self.log_test("Stats Endpoint", "FAIL", 
+                        self.log_test("Enhanced Stats Endpoint", "FAIL", 
                                     f"Missing fields: {missing_fields}", data)
                         return False
                 else:
-                    self.log_test("Stats Endpoint", "FAIL", 
+                    self.log_test("Enhanced Stats Endpoint", "FAIL", 
                                 f"HTTP {response.status}", await response.text())
                     return False
         except Exception as e:
-            self.log_test("Stats Endpoint", "FAIL", f"Connection error: {str(e)}")
+            self.log_test("Enhanced Stats Endpoint", "FAIL", f"Connection error: {str(e)}")
             return False
     
     async def test_webhook_endpoint(self):
