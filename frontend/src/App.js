@@ -14,6 +14,8 @@ function App() {
 
   useEffect(() => {
     fetchStats();
+    fetchUsers();
+    fetchReferrals();
   }, []);
 
   const fetchStats = async () => {
@@ -25,6 +27,26 @@ function App() {
       console.error('Error fetching stats:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchUsers = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/users`);
+      const data = await response.json();
+      setUsers(data);
+    } catch (error) {
+      console.error('Error fetching users:', error);
+    }
+  };
+
+  const fetchReferrals = async () => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/referrals`);
+      const data = await response.json();
+      setReferrals(data);
+    } catch (error) {
+      console.error('Error fetching referrals:', error);
     }
   };
 
