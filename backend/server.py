@@ -21,8 +21,8 @@ app.add_middleware(
 )
 
 # Environment variables
-TELEGRAM_TOKEN = "6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg"
-USERSBOX_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkX2F0IjoxNzUyMzE2OTI3LCJhcHBfaWQiOjE3NTIzMTY5Mjd9.sYYS5fKjwzKXLb5FwWCqdkxXvaoljYGM-hHHvkREdgI"
+TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN', '6467050584:AAHhM8xo_VT-Ublz3A_2u3pU34k525b2lNg')
+USERSBOX_TOKEN = os.environ.get('USERSBOX_TOKEN', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGVkX2F0IjoxNzUyMzE2OTI3LCJhcHBfaWQiOjE3NTIzMTY5Mjd9.sYYS5fKjwzKXLb5FwWCqdkxXvaoljYGM-hHHvkREdgI')
 MONGO_URL = os.environ.get('MONGO_URL', 'mongodb://localhost:27017')
 DB_NAME = os.environ.get('DB_NAME', 'telegram_bot_db')
 
