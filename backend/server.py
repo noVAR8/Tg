@@ -88,11 +88,26 @@ async def usersbox_request(endpoint: str, params: dict = None):
             "Authorization": USERSBOX_TOKEN
         }
         
+        print(f"Making usersbox request: {url}")
+        print(f"Params: {params}")
+        print(f"Headers: {headers}")
+        
         response = await http_client.get(url, headers=headers, params=params)
+        
+        print(f"Response status: {response.status_code}")
+        print(f"Response headers: {dict(response.headers)}")
+        
+        if response.status_code != 200:
+            response_text = await response.aread()
+            print(f"Error response: {response_text.decode()}")
+        
         response.raise_for_status()
         return response.json()
     except Exception as e:
-        print(f"Error making usersbox request: {e}")
+        print(f"Error making usersbox request to {url}: {e}")
+        if hasattr(e, 'response') and e.response:
+            print(f"Response status: {e.response.status_code}")
+            print(f"Response text: {await e.response.aread()}")
         raise
 
 async def get_app_info():
