@@ -134,6 +134,37 @@ async def handle_start_command(chat_id: int):
     """
     await send_telegram_message(chat_id, welcome_text)
 
+def normalize_phone_number(phone: str) -> str:
+    """Normalize phone number to E.164 format"""
+    # Remove all non-digit characters except +
+    import re
+    cleaned = re.sub(r'[^\d+]', '', phone)
+    
+    # If starts with 8, replace with +7
+    if cleaned.startswith('8'):
+        cleaned = '+7' + cleaned[1:]
+    # If starts with 7 without +, add +
+    elif cleaned.startswith('7') and not cleaned.startswith('+7'):
+        cleaned = '+' + cleaned
+    # If starts with 9 and is 10 digits, add +7
+    elif cleaned.startswith('9') and len(cleaned) == 10:
+        cleaned = '+7' + cleaned
+    
+    return cleaned
+
+def format_search_query(query: str) -> str:
+    """Format search query according to usersbox API requirements"""
+    query = query.strip()
+    
+    # Check if it looks like a phone number
+    import re
+    phone_pattern = r'[\+]?[0-9\s\-\(\)]{10,15}'
+    if re.match(phone_pattern, query):
+        return normalize_phone_number(query)
+    
+    # For other queries, just clean up extra spaces
+    return ' '.join(query.split())
+
 async def handle_search_command(chat_id: int, query: str):
     """Handle search command"""
     if not query.strip():
@@ -141,8 +172,11 @@ async def handle_search_command(chat_id: int, query: str):
         return
     
     try:
+        # Format the query properly
+        formatted_query = format_search_query(query)
+        
         # Show processing message
-        await send_telegram_message(chat_id, f"🔍 Ищу информацию по запросу: `{query}`")
+        await send_telegram_message(chat_id, f"🔍 Ищу информацию по запросу: `{formatted_query}`")
         
         # First, get count of results
         explain_result = await explain_search(query)
