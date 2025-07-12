@@ -5,9 +5,12 @@ const API_BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001
 
 function App() {
   const [stats, setStats] = useState(null);
+  const [users, setUsers] = useState(null);
+  const [referrals, setReferrals] = useState(null);
   const [loading, setLoading] = useState(true);
   const [webhookStatus, setWebhookStatus] = useState(null);
   const [usersboxTest, setUsersboxTest] = useState(null);
+  const [activeTab, setActiveTab] = useState('overview');
 
   useEffect(() => {
     fetchStats();
