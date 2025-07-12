@@ -234,11 +234,10 @@ metadata:
 
 test_plan:
   current_focus:
-    - "Basic API Health Check"
-    - "Usersbox API Integration"
-    - "Telegram Webhook Setup"
-    - "Database Stats and Connectivity"
-    - "Webhook Message Processing"
+    - "Phone Number Formatting Improvements"
+    - "Usersbox Query Formatting"
+    - "Enhanced Error Handling"
+    - "Debug Logging and Query Tracking"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
