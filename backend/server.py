@@ -247,7 +247,8 @@ async def handle_search_command(chat_id: int, query: str):
         await db.searches.insert_one({
             "id": str(uuid.uuid4()),
             "chat_id": chat_id,
-            "query": query,
+            "query": formatted_query,
+            "original_query": query,
             "results_count": total_count,
             "timestamp": datetime.utcnow()
         })
